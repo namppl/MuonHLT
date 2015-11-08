@@ -161,14 +161,12 @@ void MuonTriggerEfficiencyAnalyzer::beginJob() {
   int eta_bin_n = sizeof(eta_bins)/sizeof(double); 
   double absEta_bins[] = {.0, .9, 1.2, 2.1, 2.4};
   int absEta_bin_n = sizeof(absEta_bins)/sizeof(double);
-  std::cout<<"1"<<std::endl;
   hists_["muonPt_tag"]   = outfile_->make<TH1F>("muonPt_tag"  , "pt"  ,  40,  0., 200.);
   hists_["muonEta_tag"]  = outfile_->make<TH1F>("muonEta_tag" , "eta" ,  eta_bin_n-1, eta_bins);
   hists_["muonAbsEta_tag"]  = outfile_->make<TH1F>("muonAbsEta_tag" , "|eta|" ,  absEta_bin_n-1, absEta_bins);
   hists_["muonPhi_tag"]  = outfile_->make<TH1F>("muonPhi_tag" , "phi" ,  100, -5.,   5.); 
   hists_["muonNvtx_tag"] = outfile_->make<TH1F>("nvtx_tag",     "nvtx", 50, 0., 50.);
 
-  std::cout<<"2"<<std::endl;
   hists_["muonPt_tag"]->Sumw2();
   hists_["muonEta_tag"]->Sumw2();
   hists_["muonAbsEta_tag"]->Sumw2();
@@ -187,7 +185,6 @@ void MuonTriggerEfficiencyAnalyzer::beginJob() {
   hists_["muonPhi_probe_den"]->Sumw2();
   hists_["muonNvtx_probe_den"]->Sumw2();
 
-  std::cout<<"3"<<std::endl;
   hists_["muonPt_probe_L1"]   = outfile_->make<TH1F>("muonPt_probe_L1"  , "pt"  ,  40,  0., 200.);
   hists_["muonEta_probe_L1"]  = outfile_->make<TH1F>("muonEta_probe_L1" , "eta" ,  eta_bin_n-1, eta_bins);
   hists_["muonAbsEta_probe_L1"]  = outfile_->make<TH1F>("muonAbsEta_probe_L1" , "|eta|" ,  absEta_bin_n-1, absEta_bins);
@@ -417,7 +414,6 @@ void MuonTriggerEfficiencyAnalyzer::beginJob() {
   hists_["muonNvtx_probe_L3IOHitSeed"]->Sumw2();
 
 
-  std::cout<<"4"<<std::endl;
   hists_["muonPt_probe1"]   = outfile_->make<TH1F>("muonPt_probe1"  , "pt"  ,  40,  0., 200.);
   hists_["muonEta_probe1"]  = outfile_->make<TH1F>("muonEta_probe1" , "eta" ,  eta_bin_n-1, eta_bins);
   hists_["muonAbsEta_probe1"]  = outfile_->make<TH1F>("muonAbsEta_probe1" , "|eta|" ,  absEta_bin_n-1, absEta_bins);
@@ -514,7 +510,6 @@ void MuonTriggerEfficiencyAnalyzer::beginJob() {
   hists_["muonPhi_probe8"]->Sumw2();
   hists_["muonNvtx_probe8"]->Sumw2();
 
-  std::cout<<"5"<<std::endl;
   hists_["mumuMass_all"] = outfile_->make<TH1F>("mumuMass_all", "mass",   90, 30., 120.);
   hists_["mumuMass_den"] = outfile_->make<TH1F>("mumuMass_den", "mass",   90, 30., 120.);
   hists_["mumuMass_L1"] = outfile_->make<TH1F>("mumuMass_L1", "mass",   90, 30., 120.);
@@ -559,7 +554,6 @@ void MuonTriggerEfficiencyAnalyzer::beginJob() {
   hists_["mumuMass3"]->Sumw2();
   hists_["mumuMass4"]->Sumw2();
 
-  std::cout<<"6"<<std::endl;
   hists_["muonPt12_den"]  = outfile_->make<TH2F>("muonPt12_den"  , "p_{T,1} vs p_{T,2}",  80, 20., 100., 80, 20., 100.);
   hists_["muonEta12_den"] = outfile_->make<TH2F>("muonEta12_den" , "eta" , eta_bin_n-1, eta_bins, eta_bin_n-1, eta_bins);
   hists_["muonPhi12_den"] = outfile_->make<TH2F>("muonPhi12_den" , "phi" , 16, -3.2, 3.2, 16, -3.2, 3.2); 
@@ -615,7 +609,6 @@ void MuonTriggerEfficiencyAnalyzer::beginJob() {
   hists_["muonPt12_L3Global"]->Sumw2();
   hists_["muonEta12_L3Global"]->Sumw2();
   hists_["muonPhi12_L3Global"]->Sumw2();
-  std::cout<<"7"<<std::endl;
   hists_["muonPt12_1"]  = outfile_->make<TH2F>("muonPt12_1"  , "p_{T,1} vs p_{T,2}",  80, 20., 100., 80, 20., 100.);
   hists_["muonEta12_1"] = outfile_->make<TH2F>("muonEta12_1" , "eta" , eta_bin_n-1, eta_bins, eta_bin_n-1, eta_bins);
   hists_["muonPhi12_1"] = outfile_->make<TH2F>("muonPhi12_1" , "phi" , 16, -3.2, 3.2, 16, -3.2, 3.2); 
@@ -948,7 +941,6 @@ void MuonTriggerEfficiencyAnalyzer::analyze(const edm::Event &event, const edm::
 		std::cout<<"Debug"<<std::endl;
                 break; 
 	      }
-std::cout<<"L1"<<std::endl;
 	      //L1 matching begins
 	      if( filterIndex<triggerEvent->sizeFilters() ) {
 		const trigger::Vids & vids( triggerEvent->filterIds(filterIndex) );
@@ -1040,7 +1032,6 @@ std::cout<<"L1"<<std::endl;
 		break; 
               }
  
-std::cout<<"L2"<<std::endl;
 	      //L2 matching begins
 	      if( filterIndex<triggerEvent->sizeFilters() ) {
 		const trigger::Vids & vids( triggerEvent->filterIds(filterIndex) );
@@ -1091,7 +1082,6 @@ std::cout<<"L2"<<std::endl;
 	      finProbeDeltaR = 999999.;
  
               if(useRerun_){
-std::cout<<"L3 Seed"<<std::endl;
  	      //L3 seed matching begins
               edm::Handle<reco::TrackCollection> L3TkTrackOIStateHandle;
               edm::Handle<reco::TrackCollection> L3TkTrackOIHitHandle;
@@ -1109,7 +1099,6 @@ std::cout<<"L3 Seed"<<std::endl;
               muPhi = (*mu2).phi();
               maxProbeDeltaR = 0.3;
 
-std::cout<<"L3 Seed oistate for"<<std::endl;
               if(!L3SeedOIStateHandle.isValid()) continue;
               for(unsigned i=0; i!=L3SeedOIStateHandle->size(); i++) {
                 const L3MuonTrajectorySeed seed = L3SeedOIStateHandle->at(i);
@@ -1163,7 +1152,6 @@ std::cout<<"L3 Seed oistate for"<<std::endl;
               }
 	      finProbeDeltaR = 999999.;
 
-	      std::cout<<"L3 track"<<std::endl;
               //L3 tk track matching begins
  
 	      event.getByLabel("hltL3TkTracksFromL2OIState", L3TkTrackOIStateHandle);
@@ -1227,7 +1215,6 @@ std::cout<<"L3 Seed oistate for"<<std::endl;
 
 	      finProbeDeltaR = 999999.;
 
-std::cout<<"L3 global matching"<<std::endl;
               //L3 global matching begins
               muEta = (*mu2).eta();
               muPhi = (*mu2).phi();
@@ -1257,7 +1244,6 @@ std::cout<<"L3 global matching"<<std::endl;
 	      finProbeDeltaR = 999999.;	      
 
               }
-std::cout<<"L3"<<std::endl;
 	      //L3 matching begins
 	      for(unsigned int j=0; j<=lastModuleIndex; ++j) { 
 		if( probeFilterL3_.compare(moduleLabels[j])!=0 ) continue; 
