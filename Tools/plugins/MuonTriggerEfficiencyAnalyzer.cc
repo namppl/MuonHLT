@@ -1081,7 +1081,7 @@ void MuonTriggerEfficiencyAnalyzer::analyze(const edm::Event &event, const edm::
 
 	      finProbeDeltaR = 999999.;
  
-              if(useRerun_){
+              if(useRerun_){//L3 intermediate steps
  	      //L3 seed matching begins
               edm::Handle<reco::TrackCollection> L3TkTrackOIStateHandle;
               edm::Handle<reco::TrackCollection> L3TkTrackOIHitHandle;
@@ -1243,7 +1243,7 @@ void MuonTriggerEfficiencyAnalyzer::analyze(const edm::Event &event, const edm::
               }
 	      finProbeDeltaR = 999999.;	      
 
-              }
+              }//L3 intermediate steps end
 	      //L3 matching begins
 	      for(unsigned int j=0; j<=lastModuleIndex; ++j) { 
 		if( probeFilterL3_.compare(moduleLabels[j])!=0 ) continue; 
