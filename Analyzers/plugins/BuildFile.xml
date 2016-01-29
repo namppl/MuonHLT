@@ -1,0 +1,105 @@
+<use name="CommonTools/Utils"/>
+<use name="FWCore/Framework"/>
+<use name="FWCore/PluginManager"/>
+<use name="FWCore/ParameterSet"/>
+<use name="DataFormats/Common"/>
+<use name="DataFormats/Candidate"/>
+<use name="DataFormats/PatCandidates"/>
+<use name="PhysicsTools/Utilities"/>
+<use name="CommonTools/UtilAlgos"/>
+<use name="PhysicsTools/PatAlgos"/>
+<use name="CommonTools/CandUtils"/>
+<use name="rootcintex"/>
+<use name="AnalysisDataFormats/TopObjects"/>
+<use name="RecoEgamma/EgammaTools"/>
+
+<library name="MuonHLTAnalyzersPlugin" file="*.cc">
+   <use name="MuonHLT/Analyzers"/>
+   <use name="root"/>
+   <use name="rootminuit"/>
+   <use name="clhep"/>
+   <use name="rootrflx"/>
+   <use name="rootmath"/>
+   <Flags EDM_PLUGIN="1"/>
+</library>
+<!-- 
+<library   file="MuonTriggerMakeTree.cc" name="MuonTriggerMakeTree">
+  <use name="TrackingTools/TrajectoryState"/>
+  <use name="MagneticField/Engine"/>
+  <use name="MagneticField/Records"/>
+  <use name="TrackingTools/Records"/>
+  <use name="TrackPropagation/SteppingHelixPropagator"/>
+  <use name="RecoMuon/Records"/>
+  <use name="RecoMuon/DetLayers"/>
+  <flags   EDM_PLUGIN="1"/>
+</library>
+<library   file="MuonTriggerMakeTreeGEN.cc" name="MuonTriggerMakeTreeGEN">
+  <use name="TrackingTools/TrajectoryState"/>
+  <use name="MagneticField/Engine"/>
+  <use name="MagneticField/Records"/>
+  <use name="TrackingTools/Records"/>
+  <use name="TrackPropagation/SteppingHelixPropagator"/>
+  <use name="RecoMuon/Records"/>
+  <use name="RecoMuon/DetLayers"/>
+  <flags   EDM_PLUGIN="1"/>
+</library>
+ -->
+<!-- 
+<library   file="MuonTriggerMakeTreePF.cc" name="MuonTriggerMakeTreePF">
+  <use name="TrackingTools/TrajectoryState"/>
+  <use name="MagneticField/Engine"/>
+  <use name="MagneticField/Records"/>
+  <use name="TrackingTools/Records"/>
+  <use name="TrackPropagation/SteppingHelixPropagator"/>
+  <use name="RecoMuon/Records"/>
+  <use name="RecoMuon/DetLayers"/>
+  <flags   EDM_PLUGIN="1"/>
+</library>
+ -->
+<!-- <library   file="MuonNtuples.cc" name="MuonNtuples"> -->
+<use name="TrackingTools/TrajectoryState"/>
+<use name="MagneticField/Engine"/>
+<use name="MagneticField/Records"/>
+<use name="TrackingTools/Records"/>
+<use name="TrackPropagation/SteppingHelixPropagator"/>
+<use name="RecoMuon/Records"/>
+<use name="RecoMuon/DetLayers"/>
+<!--   <flags   EDM_PLUGIN="1"/> -->
+<export>
+  <lib   name="1"/>
+</export>
+<!-- </library> -->
+<!-- 
+<library   file="MuonTriggerMakeTreePFGEN.cc" name="MuonTriggerMakeTreePFGEN">
+  <use name="TrackingTools/TrajectoryState"/>
+  <use name="MagneticField/Engine"/>
+  <use name="MagneticField/Records"/>
+  <use name="TrackingTools/Records"/>
+  <use name="TrackPropagation/SteppingHelixPropagator"/>
+  <use name="RecoMuon/Records"/>
+  <use name="RecoMuon/DetLayers"/>
+<!~~   <flags   EDM_PLUGIN="1"/> ~~>
+</library>
+ -->
+<!-- 
+<library   file="MuonRateMakeTree.cc" name="MuonRateMakeTree">
+  <use name="TrackingTools/TrajectoryState"/>
+  <use name="MagneticField/Engine"/>
+  <use name="MagneticField/Records"/>
+  <use name="TrackingTools/Records"/>
+  <use name="TrackPropagation/SteppingHelixPropagator"/>
+  <use name="RecoMuon/Records"/>
+  <use name="RecoMuon/DetLayers"/>
+  <flags   EDM_PLUGIN="1"/>
+</library>
+<library   file="MuonRateMakeTreePF.cc" name="MuonRateMakeTreePF">
+  <use name="TrackingTools/TrajectoryState"/>
+  <use name="MagneticField/Engine"/>
+  <use name="MagneticField/Records"/>
+  <use name="TrackingTools/Records"/>
+  <use name="TrackPropagation/SteppingHelixPropagator"/>
+  <use name="RecoMuon/Records"/>
+  <use name="RecoMuon/DetLayers"/>
+  <flags   EDM_PLUGIN="1"/>
+</library>
+ -->
